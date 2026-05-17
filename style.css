@@ -1,0 +1,111 @@
+/* ===== ESTILO GERAL ===== */
+body {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e3f2fd; /* Aquele azul clarinho */
+    padding: 40px 20px;
+    transition: background-color 0.5s ease;
+}
+
+/* ===== TÍTULO ===== */
+h1 {
+    color: #1565c0; 
+    margin-bottom: 30px;
+}
+
+/* ===== ENTRADAS (INPUTS E LABELS) ===== */
+label {
+    font-size: 16px;
+    color: #1565c0;
+    font-weight: bold;
+    display: inline-block;
+    width: 160px; /* Alinha os textos à esquerda dos inputs */
+    text-align: right;
+    margin-right: 10px;
+}
+
+input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 200px;
+}
+
+input:focus {
+    border-color: #1565c0; /* Escurece a borda ao clicar */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* ===== RESULTADO ===== */
+#resultado {
+    margin-top: 30px;
+    max-width: 600px; /* caber melhor o texto */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* centralizar o texto */
+    line-height: 1.6;
+    padding: 15px;
+    white-space: pre-line; /* para respeitar quebras de linha */
+    color: #1565c0;
+    font-size: 18px;
+}
+
+/* ===== BOTÕES ===== */
+button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 16px;
+    background-color: #3498db; /* Azul forte */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+button:last-of-type {
+    background-color: #78909c; /* Cinza azulado para o botão de limpar */
+
+}
+button:last-of-type:hover {
+    background-color: #607d8b; /* Escurece o cinza azulado no hover */
+}
+/* ===== BOTÃO NOTURNO FLUTUANTE ===== */
+#btn-noturno {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+/* ===== MODO NOTURNO ===== */
+body.dark-mode {
+    background-color: #121212;
+    color: #e3f2fd;
+}
+
+body.dark-mode h1 {
+    color: #90caf9;
+}
+
+body.dark-mode label {
+    color: #90caf9; /* Ajusta as labels no modo escuro */
+}
+
+body.dark-mode #resultado {
+    color: #90caf9; /* Azul claro para o modo escuro */
+}

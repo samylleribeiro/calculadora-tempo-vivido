@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcular tempo vivido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="btn-noturno" onclick="toggleDarkMode()">🌙</button> 
+
+    <h1>Calculadora de Tempo Vivido 📅 </h1>
+
+    <label for="dataNascimento">Data de Nascimento:</label>
+    <input type="date" id="dataNascimento" placeholder="Qual a sua data de nascimento?">
+    <br><br>
+ 
+    <button onclick="tempoVivido()">Calcular Tempo Vivido 📅</button>
+    <button onclick="limpar()">Limpar 🔄 </button>
+
+    <h2 id="resultado"></h2>
+   
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>
