@@ -18,8 +18,8 @@ label {
     font-size: 16px;
     color: #1565c0;
     font-weight: bold;
-    display: inline-block;
-    width: 160px; /* Alinha os textos à esquerda dos inputs */
+    display: inline-block;   
+    width: 80px;
     text-align: right;
     margin-right: 10px;
 }
@@ -31,54 +31,73 @@ input {
     border-radius: 8px;
     outline: none;
     transition: border-color 0.3s;
-    width: 200px;
+    /* pro celular*/
+    width: 80%;
+    max-width: 250px;
 }
 
 input:focus {
-    border-color: #1565c0; /* Escurece a borda ao clicar */
+    border-color: #1565c0; 
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
 /* ===== RESULTADO ===== */
 #resultado {
-    margin-top: 30px;
-    max-width: 600px; /* caber melhor o texto */
+    margin-top: 20px;
+    max-width: 600px; 
     margin-left: auto;
     margin-right: auto;
-    text-align: center; /* centralizar o texto */
+    text-align: center; 
     line-height: 1.6;
-    padding: 15px;
-    white-space: pre-line; /* para respeitar quebras de linha */
+    padding: 10px;
+    white-space: pre-line; 
     color: #1565c0;
     font-size: 18px;
 }
-
-/* ===== BOTÕES ===== */
+/* =====  CAIXINHA DO RESULTADO (MODO CLARO) ===== */
+.container-resultado {
+    background-color: #ffffff; /* Fundo branco da caixinha */
+    max-width: 400px; /* Largura máxima para não ficar gigante na tela do notebook */
+    margin: 30px auto 0 auto; /* Centraliza na tela e desgruda dos botões */
+    padding: 20px;
+    border-radius: 12px; /* Cantinhos arredondados combinando com o app */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra super suave */
+    
+    /* Esconde a caixinha enquanto ela estiver vazia (sem resultado) */
+    display: none; 
+}
+/* ===== BOTÕES  ===== */
 button {
     display: inline-block;
     margin: 10px;
-    padding: 15px 25px;
+    padding: 12px 25px; /* Ajustado levemente */
     font-size: 16px;
-    background-color: #3498db; /* Azul forte */
+    background-color: #3498db; 
     color: white;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 button:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
 }
+
+button:active {
+    transform: scale(0.95);                     /* Dá uma leve encolhida no botão ao ser clicado */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);   /* Diminui a sombra para parecer que ele afundou */
+}
+
 button:last-of-type {
     background-color: #78909c; /* Cinza azulado para o botão de limpar */
-
 }
 button:last-of-type:hover {
     background-color: #607d8b; /* Escurece o cinza azulado no hover */
 }
+
 /* ===== BOTÃO NOTURNO FLUTUANTE ===== */
 #btn-noturno {
     position: fixed;
@@ -91,21 +110,42 @@ button:last-of-type:hover {
     font-size: 20px;
     z-index: 1000;
 }
-
 /* ===== MODO NOTURNO ===== */
 body.dark-mode {
     background-color: #121212;
     color: #e3f2fd;
 }
 
-body.dark-mode h1 {
+body.dark-mode h1, 
+body.dark-mode #resultado,
+body.dark-mode label {       /*labels fiquem claras e legíveis no modo escuro*/
     color: #90caf9;
 }
 
-body.dark-mode label {
-    color: #90caf9; /* Ajusta as labels no modo escuro */
+body.dark-mode input {
+    background-color: #1e1e1e;    /*Input escuro para o modo noturno */
+    border-color: #3e3e42;
+    color: #ffffff;
 }
 
-body.dark-mode #resultado {
-    color: #90caf9; /* Azul claro para o modo escuro */
+body.dark-mode button {
+    background-color: #2c2c2c;    /* Botão geral escuro no modo noturno */
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode button:hover {
+    background-color: #3a3a3a;
+}
+
+body.dark-mode button:last-of-type {
+    background-color: #37474f;     /* Botão de limpar em um tom escuro condizente */
+}
+
+body.dark-mode button:last-of-type:hover {
+    background-color: #455a64;
+}
+body.dark-mode .container-resultado {
+    background-color: #1e1e1e;       /* Cinza escuro confortável para o modo noturno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
